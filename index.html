@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy information and public support for the NIGHTFALL SUBZERO Unity Windows game.">
+  <meta name="referrer" content="no-referrer">
+  <title>NIGHTFALL SUBZERO — Privacy and Support</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #111923; color: #e8edf3; }
+    body { margin: 0; line-height: 1.65; }
+    main { max-width: 760px; margin: auto; padding: 48px 24px 64px; }
+    h1, h2 { line-height: 1.25; color: #fff; }
+    h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 12px 0; }
+    h2 { margin-top: 36px; font-size: 1.4rem; }
+    a { color: #a5d9ff; text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid #f6d07b; outline-offset: 4px; }
+    nav { display: flex; gap: 24px; flex-wrap: wrap; margin: 24px 0; }
+    code { overflow-wrap: anywhere; color: #f6d07b; }
+    .meta { color: #b9c5d2; }
+    .notice { border-left: 3px solid #f6d07b; padding: 12px 18px; background: #1c2836; }
+    li { margin: 8px 0; }
+    section { scroll-margin-top: 20px; }
+    footer { border-top: 1px solid #354454; margin-top: 40px; padding-top: 20px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="meta">ResearchForumOnline · Windows Unity edition</p>
+    <h1>NIGHTFALL SUBZERO</h1>
+    <p>Privacy information and public support</p>
+    <p class="meta">Effective 5 October 2026. Scope: Unity source version 0.44.0-preview, including the additive 045 content. This page does not describe the separate Godot edition.</p>
+    <nav aria-label="Page sections"><a href="#privacy">Privacy</a><a href="#support">Support</a><a href="#data-controls">Local data controls</a></nav>
+  </header>
+  <section id="privacy" aria-labelledby="privacy-title">
+    <h2 id="privacy-title">Game privacy</h2>
+    <p>NIGHTFALL SUBZERO is a single-player game designed for offline play. The reviewed game code does not implement player accounts, online multiplayer, chat, cloud saves, advertising, in-app purchases, analytics uploads or a remote AI service. We do not operate a gameplay data collection service for this Unity edition. Unity cloud diagnostics, analytics, ads and purchasing are disabled in the reviewed project settings.</p>
+    <p>The game stores the following information locally to preserve your progress and preferences:</p>
+    <ul>
+      <li>Campaign checkpoints: mission stage, kills, objectives and equipment state, supplies, collected caches, puzzle state, grenades, demolition state and related mission progress.</li>
+      <li>Preferences: graphics profile, footsteps, mouse sensitivity, master volume, weapon/camera movement preference and the last campaign operation.</li>
+      <li>Field intelligence collection: collection flags for 18 operations, with two discoveries per operation, plus a checksum used to detect corrupted data.</li>
+    </ul>
+    <p>These game records do not request your real name, email address, payment details or conversations. Standalone mission replay does not overwrite campaign checkpoints; collected field intelligence and changed settings can still be saved locally.</p>
+    <h2>Storage, logs and platform services</h2>
+    <p>For the unpackaged Windows Unity game, the expected save location is <code>%USERPROFILE%\AppData\LocalLow\NIGHTFALL SUBZERO\NIGHTFALL SUBZERO</code>. Checkpoints use <code>winter-lance-unity.json</code> or <code>campaign-&lt;operation-id&gt;-unity.json</code>, with <code>.previous</code> backups and possible <code>.tmp</code> staging files. The collection archive is <code>field-intelligence-v1.dat</code>, with a <code>.bak</code> backup and possible temporary files. Preferences use Unity PlayerPrefs; on Windows these normally reside in the current user's registry under the game's company/product names. Store packaging may change or redirect storage locations.</p>
+    <p>Unity and Windows can generate local diagnostic logs and crash information. Explicit development/QA runs can also write hardware/performance information, reports and screenshots to selected diagnostic folders. This source review does not establish every engine or operating-system crash-handler behavior, installed-package location, or automatic retention period. There is no automatic expiry implemented for the reviewed game save records.</p>
+    <p>Microsoft Store downloads, licensing, purchases and platform diagnostics are handled separately by Microsoft and Windows. A Store package's internet capability alone does not establish that the game transmits data. The reviewed source does not prove that every engine or platform component is network-silent.</p>
+  </section>
+  <section id="data-controls" aria-labelledby="controls-title">
+    <h2 id="controls-title">Local data controls</h2>
+    <p>You control the local records on your Windows account. Close the game and back up your saves before removing checkpoint or collection files; removing them loses the corresponding progress. Preferences are separate PlayerPrefs records. There is no in-game account-deletion service or verified one-click deletion of all files and preferences. Uninstalling or updating a Store package is not a verified way to erase or preserve every local record.</p>
+    <p>We cannot remotely retrieve or delete saves stored only on your computer. For help locating data in a specific installation, use the support route below without uploading private files.</p>
+  </section>
+  <section id="support" aria-labelledby="support-title">
+    <h2 id="support-title">Support</h2>
+    <p>Submit a non-sensitive bug report or support request through <a href="https://github.com/ResearchForumOnline/Nightfall-Subzero-Privacy/issues">the public GitHub Issues page</a>. You need a GitHub account to submit an issue; browsing this information page does not require a game account.</p>
+    <p class="notice">GitHub issues are public. Do not post personal data, email addresses, payment information, passwords, keys, private files, full local paths or unredacted logs/screenshots. There is no private support inbox or private upload form provided by this site.</p>
+    <p>Include the Unity game version, whether you use a Store package or unpackaged build, the operation name, steps to reproduce, what you expected, and what happened. General Windows version and GPU model can help. Redact anything identifying you before voluntarily sharing a small relevant diagnostic excerpt.</p>
+    <p>ResearchForumOnline may read and respond to the information you choose to publish in that repository to investigate your request. GitHub hosts and processes issues under its own services and policies. No response-time guarantee is made.</p>
+  </section>
+  <section aria-labelledby="website-title">
+    <h2 id="website-title">This website</h2>
+    <p>This is a static information page hosted by GitHub Pages. The page itself adds no analytics, advertising, cookies, forms, scripts, external fonts or embedded media. GitHub may process normal request information, including IP addresses, to provide and protect its hosting service. GitHub's own privacy statement is available at <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</p>
+    <p>Privacy questions or corrections can be raised as a non-sensitive public issue. Do not include personal information in that request. This page may be revised when the Unity edition's data handling changes.</p>
+  </section>
+  <footer><p class="meta">This information page does not establish Microsoft certification, public game availability, an age rating or installed-package qualification.</p></footer>
+</main>
+</body>
+</html>
